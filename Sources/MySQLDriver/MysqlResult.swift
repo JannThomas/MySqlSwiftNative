@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import OpenKit
 
 public protocol MysqlResult {
     init(con:MySQL.Connection)
@@ -20,7 +21,7 @@ public protocol RowType {
 
 extension MySQL {
     
-    public typealias Row = [String:Any]
+    public typealias Row = OrderedDictionary<String, Any>
     public typealias ResultSet = [Row]
     
     class TextRow: MysqlResult {
